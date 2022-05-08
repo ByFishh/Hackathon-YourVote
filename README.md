@@ -1,13 +1,14 @@
 # Hackathon-YourVote
 
 ## Problème
-*Quel problème votre projet résout-il ? Comment s'inscrit-il dans le thème "Construire un avenir décentralisé" ?*
+*Le problème que nous essayons de résoudre est d'empêcher des gens d'altérer un vote qu'il soit professionel ou personnel
+(Imagineons les éléctions présidentielles)*
 
 ## Solution
-*Comment avez-vous résolu ce problème ? Quelles technologies avez-vous utilisé ? Quel a été le plus grand défi technique, comment votre solution le résout-elle ?*
+*Un site WEB qui décentralise les votes grâce à la blockchain et aux smart contract, ainsi personne ne pourra modifier le résultat de ceux ci !*
 
 ## Installation
-*Expliquez, étape par étape, comment quelqu'un peut installer votre projet et jouer avec. Le jury utilisera principalement MacOS, Ubuntu, Android et iOS. Mettre en place un docker / docker-compose est une bonne idée pour permettre à quelqu'un de tester facilement le projet.*
+*Cloner le repo github*
 
 ## Équipe et commentaires
 *Précisez le nom de votre équipe (le même que sur le discord), et dites-nous ce que vous avez appris durant ce hackathon !*

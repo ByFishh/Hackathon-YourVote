@@ -3,7 +3,7 @@ import RegisterForm from './components/RegisterForm';
 
 function Register() {
     return (
-        <div>
+        <div className='dropdown-home-menu'>
             <RegisterForm/>
         </div>
     );

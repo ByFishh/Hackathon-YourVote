@@ -5,6 +5,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
+	padding-left: 0px;
 }
 
 .rectangle {
@@ -59,4 +60,11 @@
 
 .login:focus {
 
+}
+
+.dropdown-home-menu {
+	width: 100%;
+    display: flex;
+	justify-content: center;
+    align-items: center;
 }

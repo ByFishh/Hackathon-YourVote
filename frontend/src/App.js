@@ -7,13 +7,14 @@ import Menu from './Menu';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './NavBar';
 import RegisterForm from './components/RegisterForm';
+import HomeHeader from './background_header_home.jpg';
 
 function App() {
   return (
     <div className="App">
+      <h1 className='HomeHeader'>Welcome on YourVote !</h1>
       <div className="App-header">
         <Router>
-          <h1>Welcome on YourVote !</h1>
           <NavBar/>
           <Routes>
             <Route path="/" element={<Home/>}/>

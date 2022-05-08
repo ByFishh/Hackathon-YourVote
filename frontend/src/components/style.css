@@ -3,6 +3,51 @@
 }
 
 .form-inner {
-    background-color: aqua;
     width: 100%;
+    font-size: 0.7em;
+    margin-top: 2%;
+}
+
+.form-group {
+    text-align: left;
+    display: flex;
+    align-items:flex-end;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+}
+
+.register-block {
+    background-color: #9BED97;
+    border-radius: 8px 8px 8px 8px;
+    width: 20%;
+}
+
+.login-block {
+    background-color: #8688EE;
+    border-radius: 8px 8px 8px 8px;
+    width: 20%;
+}
+
+.element:nth-child(1) {
+    align-self: flex-start;
+}
+
+.element:nth-child(2) {
+    flex-grow: 1;
+}
+
+.element:nth-child(3) {
+    align-self: flex-end;
+    min-width: 50%;
+    background-color: white;
+    border-radius: 8px 8px 8px 8px;
+}
+
+.button-home {
+	margin-top: 5%;
+	margin-bottom: 2%;
+    border-radius: 8px 8px 8px 8px;
+    color: black;
+    font-weight: bold;
 }

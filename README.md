@@ -13,4 +13,4 @@ aller dans le répertoire "backend" faite "node index.js<br>
 aller dans le répertoire "frontend" faite "npm start"*<br>
 
 ## Équipe et commentaires
-*Notre équipe ce nomme "Thomas aka le thon" *
+*Notre équipe ce nomme "Thomas aka le thon", nous avons eu du mal avec les bugs notamment sur la blockchain, ainsi que sur le setup de certaine techno comme MongoDB ou encore ReactJS.*

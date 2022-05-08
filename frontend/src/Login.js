@@ -1,10 +1,10 @@
 import React from 'react';
 import LoginForm from './components/LoginForm';
 
-function Login() {
+function Login(props) {
     return (
         <div className='dropdown-home-menu'>
-            <LoginForm/>
+            <LoginForm login={props.login} setEmail={props.setEmail} setPassword={props.setPassword}/>
         </div>
     );
 }

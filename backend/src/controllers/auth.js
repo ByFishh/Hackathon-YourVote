@@ -36,7 +36,7 @@ exports.signup = (req, res, next) => {
                     }
                 } else {
                     res.status(201).json({
-                        token: jwt.sign(
+                        accessToken: jwt.sign(
                             { userId: user },
                             process.env.SECRET,
                             { expiresIn: "24h"}
@@ -63,12 +63,13 @@ exports.login = (req, res, next) => {
                         return res.status(403).json({ msg: "Invalid Credentials"});
                     }
                     res.status(200).json({
-                        token: jwt.sign(
+                        accessToken: jwt.sign(
                             { userId: email[0].id },
                             process.env.SECRET,
                             { expiresIn: "24h"}
                         )
                     });
+
                 }
             ).catch(() => res.status(500).json({ msg: "internal server error"}));
         }

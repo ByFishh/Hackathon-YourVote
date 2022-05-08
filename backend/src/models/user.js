@@ -20,7 +20,18 @@ User.create = function(newUser, result) {
 };
 
 User.findById = function(userId, result) {
-    mysql.query("SELECT id, name, password, email, wallet, name FROM user WHERE id=?", userId, function(err, res) {
+    mysql.query("SELECT id, name, password, email, wallet, name FROM user WHERE `id`='" + userId + "'", function(err, res) {
+        if (err) {
+            console.log("error when find by ID: ", err);
+            result(err, null);
+        } else {
+            result(null, res);
+        }
+    });
+};
+
+User.findByWallet = function(wallet, result) {
+    mysql.query("SELECT id, name, password, email, wallet, name FROM user WHERE `wallet`='" + wallet + "'", function(err, res) {
         if (err) {
             console.log("error when find by ID: ", err);
             result(err, null);
@@ -31,7 +42,7 @@ User.findById = function(userId, result) {
 };
 
 User.findAll = function(result) {
-    mysql.query("SELECT id, name, password, email, wallet, name FROM user", function(err, res) {
+    mysql.query("SELECT id, name, password, email, wallet, name FROM user WHERE 1", function(err, res) {
         if (err) {
             console.log("error when find all: ", err);
             result(err, null);

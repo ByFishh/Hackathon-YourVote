@@ -24,6 +24,17 @@ exports.getCurrentUser = (req, res, next) => {
     });
 };
 
+exports.getWalletUser = (req, res, next) => {
+    User.findByWallet(req.params.wallet, function(err, user) {
+        if (err) {
+            res.status(500).json({ msg: "internal server error"});
+        } else {
+            if (user.length === 0) return res.status(404).json({ msg: "Not found"});
+            res.status(200).json( user[0] );
+        }
+    });
+};
+
 exports.editUser = (req, res, next) => {
     bcrypt.hash(req.body.password, 10).then(
         (hash) => {

@@ -7,7 +7,6 @@ import Menu from './Menu';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './NavBar';
 import RegisterForm from './components/RegisterForm';
-import HomeHeader from './background_header_home.jpg';
 
 function App() {
   return (

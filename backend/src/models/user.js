@@ -4,8 +4,7 @@ const User = function(user) {
     this.name = user.name;
     this.password = user.password;
     this.email = user.email;
-    this.wallet = user.wallet;
-    this.created_at = new Date();
+    this.wallet = user.wallet
 };
 
 User.create = function(newUser, result) {
@@ -21,7 +20,7 @@ User.create = function(newUser, result) {
 };
 
 User.findById = function(userId, result) {
-    mysql.query("SELECT id, name, password, email, wallet, DATE_FORMAT(created_at, '%Y-%m-%d %T') AS created_at, name FROM user WHERE id=?", userId, function(err, res) {
+    mysql.query("SELECT id, name, password, email, wallet, name FROM user WHERE id=?", userId, function(err, res) {
         if (err) {
             console.log("error when find by ID: ", err);
             result(err, null);
@@ -32,7 +31,7 @@ User.findById = function(userId, result) {
 };
 
 User.findAll = function(result) {
-    mysql.query("SELECT id, name, password, email, wallet, DATE_FORMAT(created_at, '%Y-%m-%d %T') AS created_at, name FROM user", function(err, res) {
+    mysql.query("SELECT id, name, password, email, wallet, name FROM user", function(err, res) {
         if (err) {
             console.log("error when find all: ", err);
             result(err, null);

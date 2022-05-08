@@ -8,7 +8,9 @@
 *Un site WEB qui décentralise les votes grâce à la blockchain et aux smart contract, ainsi personne ne pourra modifier le résultat de ceux ci !*
 
 ## Installation
-*Cloner le repo github*
+*Cloner le repo github
+aller dans le répertoire "backend" faite "node index.js
+aller dans le répertoire "frontend" faite "npm start"*
 
 ## Équipe et commentaires
 *Précisez le nom de votre équipe (le même que sur le discord), et dites-nous ce que vous avez appris durant ce hackathon !*

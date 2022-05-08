@@ -13,24 +13,26 @@ contract Ballot {
         uint voteCount;
     }
 
-    address public owner;
+    address public _owner;
 
-    bool public resultBeforeEnd;
+    bool public _resultBeforeEnd;
+    bool public _spec;
 
-    uint256 public startDate;
-    uint256 public endDate;
+    uint256 public _startDate;
+    uint256 public _endDate;
 
-    Voter[] voters;
-    Proposal[] proposals;
+    Voter[] _voters;
+    Proposal[] _proposals;
 
-    constructor(string[] memory proposalNames, uint256 date, bool result) {
-        owner = msg.sender;
-        endDate = date;
-        startDate = block.timestamp;
-        resultBeforeEnd = result;
+    constructor(string[] memory proposalNames, uint256 endDate, bool result) {
+        _owner = msg.sender;
+        _endDate = endDate;
+        _startDate = block.timestamp;
+        _resultBeforeEnd = result;
+        _spec = false;
 
         for (uint i = 0; i < proposalNames.length; i++) {
-            proposals.push(Proposal({
+            _proposals.push(Proposal({
                 name: proposalNames[i],
                 voteCount: 0
             }));
@@ -38,13 +40,23 @@ contract Ballot {
     }
 
     function isFinished() public view returns (bool) {
-        if (block.timestamp > endDate)
+        if (block.timestamp > _endDate)
             return true;
         return false;
     }
 
+    function hasAlreadyVoted(address addr) public view returns (bool) {
+        for (uint i = 0; i < _voters.length; i++) {
+            if (_voters[i].voter == addr)
+                return true;
+        }
+        return false;
+    }
+
     function getProposalsPoints() public view returns (Proposal[] memory) {
-        require(resultBeforeEnd && (block.timestamp > endDate), "The results can only be discovered at the end.");
-        return proposals;
+        if (_resultBeforeEnd)
+            return _proposals;
+        if (block.timestamp > _endDate)
+            return _proposals;
     }
 }
